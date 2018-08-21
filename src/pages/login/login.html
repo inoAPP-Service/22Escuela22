@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar color='primary'>
+        <ion-title>{{NombreUsuario}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item text-center>
+        <!---->
+        <ion-img class='ImangenLo' width='200' height='90'  src="../../assets/imgs/Prueba.jpg" ></ion-img>
+    </ion-item>
+    <ion-row>
+        <ion-item text-center>
+            <ion-icon name="person" item-left></ion-icon>
+            <ion-input type="text" [(ngModel)]="usuario.nombre" placeholder='Usuario'maxlength='12' ></ion-input>
+            <!--<input type="text"  placeholder="Enter name here">-->
+            <!--<ion-input formControlName="email" type="text" placeholder="Email"></ion-input>-->
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-item>
+            <ion-icon name="key" item-left></ion-icon>
+            <ion-input type="password" placeholder='password' [(ngModel)]="usuario.password" maxlength='12'></ion-input>
+            <!--<ion-input formControlName="password" type="password" placeholder="Password"></ion-input>-->
+        </ion-item>
+    </ion-row>
+    <ion-item text-center>
+            <button ion-button secondary (click)="goToHome()" [disabled]="usuario.password.length < 6">ingresar</button>
+    </ion-item>
+
+
+</ion-content>
+
